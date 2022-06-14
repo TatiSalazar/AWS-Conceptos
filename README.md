@@ -60,9 +60,31 @@ Estructura:
 **Dispositivo virtual:**
  * Google Authenticator (unico dispositivo)
  * Authy (Multidispositivo)
+ 
 **Factor universal**
  * Yubikey by Yubico
+ 
 **Dispositivo MFA de llavero de hardware**
  * Provided by Gemalto
-**MFA de llavero para AWS GovCloud en US**
+ 
+ **MFA de llavero para AWS GovCloud en US**
  * provided by SurePassID
+
+## Como los usuarios pueden acceder a AWS
+
+**CLI**
+* Heramienta que le permite interacturar con los servicios de AWS mediante comandos en su shell de linea de comandos
+* Acceso directo a la API publicas de los servicios de AWS
+* Puede desarrollar scripts para administrar sus recursos
+* Es de código abierto github
+
+**SDK de AWS**
+Software Development kit de aws con diferentes librerias y lenguajes de programación.
+* c++
+* javascript
+* go
+* python
+* .net
+* java
+* ruby
+* php
