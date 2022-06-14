@@ -143,16 +143,23 @@ En el menú Users -> Acess Advisor -> se lista y se visualiza los ultimos servic
 
 * No usar la cuenta ROOT : Para crear servicios, solo usar esta cuenta para configurar nuestros usuarios, por ejemplo, la cuenta administrador para crear los servicios y otros usuarios
 * Un usuario fisico = Un usuario AWS
-* Asignar Usuarios a Grupos:** para administrar mas facil a los usuarios
+* Asignar Usuarios a Grupos: para administrar mas facil a los usuarios
 * Crear politicas para contraseñas, ejemplo, usar caracteres especiales, mayusculas, minusculas, etc.
-* Multi Factor Authentication** para tener mejor seguridad en nuestra cuenta
+* Multi Factor Authentication para tener mejor seguridad en nuestra cuenta
 * Crear y usar roles
 * Usar Access Keys para accesos programaticos
-* Informe de credenciales de IAM** ver los reportes de que hacen nuestros usuarios
+* Informe de credenciales de IAM ver los reportes de que hacen nuestros usuarios
 * Nunca compartir usuarios y access keys** entre los developers
 
-
-
+## Modelo de responsabilidad compartida en IAM
+* Infraestructura (seguridad de red global)
+* Análisis de configuracion y vulnerabilidad
+* Validación de cumplimiento
+* Gestión y seguimiento de usuarios, grupos, roles y politicas
+* Habilitar MFA en todas las cuentas
+* Rotar todas sus llaves con frecuencia
+* Usar herramientas de IAM para aplicar los permisos apropiados
+* Analizar patrones de acceso y revisar permisos
 
 
 
