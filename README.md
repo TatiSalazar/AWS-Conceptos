@@ -88,3 +88,61 @@ Software Development kit de aws con diferentes librerias y lenguajes de programa
 * java
 * ruby
 * php
+
+## Setup AWS CLI en Windows
+
+1. AWS CLI installer (buscar en google)
+2. Entrar en la pagina oficial de aws y descargar el instalador
+3. Abrir el .msi e instalar (todo darle next)
+
+**Configurar cli y Access Key**
+1. Iniciar sesion en root
+2. entrar en IAM, en la parte derecha en el manu Aws account copiarmos el **link** 
+3. pegamos el link en otro navegador e iniciamos sesion con la cuenta creada antes
+4. entrar a my security credentials 
+5. el usuario que quiere ingresar debe estar en el grupo de "administradores", si no lo está, con la cuenta root debemos de cambiarlo.
+6. entrar a my security credentials, create access key y secret key (descargar .csv)
+7. entrar a la terminal -> 
+8. comando: aws configure  -> el cual pide la access key y secret key ->
+9. pide region (cualquiera donde vamos a trabajar) -> us-east-1 -> None (enter)
+10. Finish
+11. comando: aws iam list-users 
+12. muestra un json con el usuario y toda su info
+13. Ya esta todo configurado, por lo tanto ya se puede utilizar todos los servicios de aws dentro de la terminal
+
+## AWS CloudShell
+
+Es para los que no quieren descargar el CLI en sus computadores, pero solo esta disponible en algunas pocas regiones.
+
+1. Entro con mi usuario en aws y voy al item AWS Management Console
+2. Click en el icono del terminal y se abre la consola
+3. Hacer todos los pasos anteriores (setup cli windows)
+5. Finish
+
+
+## Roles en IAM para servicios
+
+* Algunos servicios de AWS deberán realizar acciones en su nombre
+* Para ello, asignaremos permisos de aws con roles de iam
+* Roles comunes:
+ * Roles de la instancia EC2
+ * Roles de la funcion Lambda
+ * Roles para CloudFormation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
