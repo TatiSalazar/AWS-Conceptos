@@ -42,3 +42,27 @@ Estructura:
   * Acción: lista de acciones
   * Recurso: lista de recursos
   * Condición: condiciones (opcional)
+ 
+## Politica de contraseñas
+ * Contraseñas seguras
+ * Longitud minima de contraseña
+ * Tipo de caracteres especificos
+ * Cambien sus propias contraseñas
+ * Caducidad de contraseña
+ * Reutilizar contraseñas
+
+##  Autenticacion Multifactor o MFA
+* Los usuarios tienen acceso a su cuenta y posiblemente cambiar configuraciones o eliminar recursos en su cuenta de AWS
+* Quiere proteger sus cuentas raiz y usuarios de IAM
+* MFA = contraseña que conoce + dispositivo de seguridad que posee
+
+## Opciones de dispositivo MFA en AWS
+**Dispositivo virtual:**
+ * Google Authenticator (unico dispositivo)
+ * Authy (Multidispositivo)
+**Factor universal**
+ * Yubikey by Yubico
+**Dispositivo MFA de llavero de hardware**
+ * Provided by Gemalto
+**MFA de llavero para AWS GovCloud en US**
+ * provided by SurePassID
