@@ -129,7 +129,27 @@ Es para los que no quieren descargar el CLI en sus computadores, pero solo esta 
  * Roles de la funcion Lambda
  * Roles para CloudFormation
 
+## Herramientas de seguridad
+* Reporte de credenciales
+* Asesor de acceso
 
+**Credential Report**
+Nos ofrece un reporte completo de lo que esta haciendo nuestros usuarios un excel
+
+**Access Advisor**
+En el menú Users -> Acess Advisor -> se lista y se visualiza los ultimos servicios que ha utilizado nuestros usuarios.
+
+## Mejores Prácticas
+
+**No usar la cuenta ROOT :** Para crear servicios, solo usar esta cuenta para configurar nuestros usuarios, por ejemplo, la cuenta administrador para crear los servicios y otros usuarios
+**Un usuario fisico = Un usuario AWS**
+**Asignar Usuarios a Grupos:** para administrar mas facil a los usuarios
+**Crear politicas para contraseñas** por ejemplo, usar caracteres especiales, mayusculas, minusculas, etc.
+**Multi Factor Authentication** para tener mejor seguridad en nuestra cuenta
+**Crear y usar roles**
+**Usar Access Keys para accesos programaticos**
+**Informe de credenciales de IAM** ver los reportes de que hacen nuestros usuarios
+**Nunca compartir usuarios y access keys** entre los developers
 
 
 
