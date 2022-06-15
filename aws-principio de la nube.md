@@ -30,6 +30,11 @@ Un **servidor** está compuesto de un :
 * Menores costos: no se incurre en gastos de espacio, mantenimiento, hardware
 * Mayor escalabilidad: uso eficiente de los recursos necesarios sin importar el tamaño o crecimiento del proyecto
 * Confiabilidad: soporte tecnico 24/7, proteccion contra eventualidades y/o desastres naturales 
-
+* Cambiar la inversion de capital por gastos variables
+* Beneficiarse de las grandes economias de escala
+* Dejar de hacer suposiciones sobra la capacidad
+* Aumentar la velocidad y la agilidad
+* Dejar de gastar dinero en la ejecucion y el mantenimiento de centros de datos
+Adquirir escala mundial en minutos
 
 
