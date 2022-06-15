@@ -9,12 +9,15 @@ Definiciones, conceptos sobre aws
 * **Usuarios**: Son personas dentro de su organización y se pueden agrupar
 * **Grupos**: solo contienen usuarios, no otros grupos.
 * **Los usuarios** no tienen que pertenecer a un grupo, y el usuario puede pertenecer a varios grupos
-(IAM)
+
+![](https://github.com/TatiSalazar/AWS-Conceptos/blob/master/IAM.png?raw=true)
 
 ## IAM: Politicas
 * Son los accesos a todos los servicios de AWS, y estas politicas van a ser dadas a traves de los usuarios o grupos se les pueden asignar documentos JSON llamados políticas.
 * Estas politicas definen los permisos de los usuarios
 * En AWS se aplica el principio de privilegios minimos (no otorgar mas permisos de los que necesita un usuario)
+
+![](https://github.com/TatiSalazar/AWS-Conceptos/blob/master/herenciaPolitica.png?raw=true)
 
 ## Otorgar permisos
 Se crea un usuario en los siguientes pasos:
@@ -42,6 +45,8 @@ Estructura:
   * Acción: lista de acciones
   * Recurso: lista de recursos
   * Condición: condiciones (opcional)
+
+![](https://github.com/TatiSalazar/AWS-Conceptos/blob/master/estructuraPolitica.png?raw=true)
  
 ## Politica de contraseñas
  * Contraseñas seguras
@@ -89,6 +94,8 @@ Software Development kit de aws con diferentes librerias y lenguajes de programa
 * ruby
 * php
 
+![](https://github.com/TatiSalazar/AWS-Conceptos/blob/master/SDK.png?raw=true)
+
 ## Setup AWS CLI en Windows
 
 1. AWS CLI installer (buscar en google)
@@ -128,6 +135,10 @@ Es para los que no quieren descargar el CLI en sus computadores, pero solo esta 
  * Roles de la instancia EC2
  * Roles de la funcion Lambda
  * Roles para CloudFormation
+
+![](https://github.com/TatiSalazar/AWS-Conceptos/blob/master/permisosRoles1.png?raw=true)
+![](https://github.com/TatiSalazar/AWS-Conceptos/blob/master/permisosRoles2.png?raw=true)
+![](https://github.com/TatiSalazar/AWS-Conceptos/blob/master/permisosRoles3.png?raw=true)
 
 ## Herramientas de seguridad
 * Reporte de credenciales
