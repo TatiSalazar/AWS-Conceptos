@@ -206,4 +206,22 @@ Es una oferta de servicio administrado de AWS que le proporciona:
 * Servicio distribuido con error automático
 * Compatible con otros servicios de AWS
 
+ ## Crea una alerta de facturación
+ Proceso de configuracion:
 
+1. click en el nombre de usuario
+2. click en opcion: Billing Dashboard
+Budgets
+3. Create a Budgets
+4. Nos mostrara los Budget Types, dejar amarcada la opcion por defecto Cost budget -Recommended y click en el boton superior: Enable cost Explorer para habilitar el seguimiento de gastos
+5. En la pagina de budget types, dar click en next
+nos mostrara la pagina Set Your Budget
+seleccionar cada cuando se realizara el budget, daily, monthly, etc
+6. seleccionar desde cuando se quire empezar a hacer el monitoreo en Start Date
+7. seleccionar en Choose how budget. Fixed significa que va monitorear si nos gastamos mas o igual de la cantidad indicada en el campo Enter your budgeted amount($)
+8. click en Next
+9. Click en el boton: Add an alert threshold
+10. En la seccion Alert #1, configuraremos como se debe ejecutar la alerta
+11. Indicamos si la alerta se hara por el valor absoluto o algun porcentaje en Email recipients indicar el correo electronico al que llegara la alerta
+12. click en: Add alert threshold
+13. click en: Create budget
