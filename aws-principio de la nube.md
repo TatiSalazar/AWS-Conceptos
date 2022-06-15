@@ -179,3 +179,31 @@ AWS Identity and Access Management (IAM) proporciona un control de acceso detall
 2. Se crean otros roles, por ejemplo, developers, sales, tester. Se pueden crear **politicas**, creando grupos de acceso.
 
 ## IAM Roles
+Se crean roles, por ejemplo, rol developer, rol tester, para poder ingresar a algun servicio en especifico.
+
+## Acerca del servicio (AWS Secrets Manager)
+
+El servicio le permite alternar, administrar y recuperar fácilmente credenciales de bases de datos, claves de API y otros datos confidenciales durante su ciclo de vida. Los usuarios y las aplicaciones recuperan datos confidenciales con una llamada a las API de Secrets Manager, lo que elimina la necesidad de codificar información confidencial en texto sin formato.
+
+* Protege los secretos que son necesarios para acceder a sus aplicación, servicios y recursos.
+* Rotarlos automáticamente 
+* Los secretos pueden ser contraseñas, claves y tokens
+
+```java
+import mysql.connector
+connection = mysql.connector.connect(
+host="localhost",
+database="mydb",
+user="root",
+password=get_secret_value['SecretString'])
+```
+
+## AWS Directory Service
+Es una oferta de servicio administrado de AWS que le proporciona:
+* Directorio activo administrado
+* Opción de directorio activo simple
+* Conector AD
+* Servicio distribuido con error automático
+* Compatible con otros servicios de AWS
+
+
