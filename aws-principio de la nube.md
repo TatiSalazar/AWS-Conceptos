@@ -4,9 +4,9 @@ Un **servidor** está compuesto de un :
 * Cliente : Tienen direcciones IP
 * Network : Es el intermediario entre el cliente y el servidor
 * Servidores : Tienen direcciones IP
-  * Cómputo: CPU
-  * Memoria: RAM
-  * Almacenamiento: datos
+  * Cómputo: CPU es utilizado para hacer todas las operaciones que necesitamos para   nuestra información
+  * Memoria: RAM va almacenar esa información va poder ser como un gran cerebro que   se ocupa de esa información
+  * Almacenamiento: datos, datos almacenan datos, los datos son como archivos de       texto plano que ocuparemos
   * Base de datos: información almacenada de forma estructurada
   * Redes: routers, switch, servidor DNS
 
@@ -37,4 +37,32 @@ Un **servidor** está compuesto de un :
 * Dejar de gastar dinero en la ejecucion y el mantenimiento de centros de datos
 Adquirir escala mundial en minutos
 
+## Tipos de cómputo en la nube
 
+* **IaaS**: Infraestrucura como Servicio. 
+  * Azure
+  * Linode
+  * Digital Ocean 
+  * S2 AWS 
+  * 
+* **PaaS**: Plataforma como Servicio.
+  * Heroku
+  * Google App Engine
+  * AWS Elastic Beanstalk 
+  * Firabase
+  
+* **SaaS**: Software como Servicio.
+  * Amazon Rekognition
+  * Dropbox
+  * Zoom
+  * Gmail
+ 
+## Precio nube, AWS
+
+* Computo, pagar por el tiempo que usamos la computación
+* Almacenamiento, pagar por la información almacenada en la nube
+* Información, información transferida fuera de la nube
+
+## Historia de AWS
+
+Benjamin Black y Chris Pinkham
