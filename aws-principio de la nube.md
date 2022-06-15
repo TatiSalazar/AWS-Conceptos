@@ -57,6 +57,17 @@ Adquirir escala mundial en minutos
   * Zoom
   * Gmail
  
+* **On-premise**
+    Applications: si
+    Data: si
+    Runtime: si
+    Middleware: si
+    O/S: si
+    Virtualization: si
+    Servers: si
+    Storage: si
+    Networking: si
+ 
 ## Precio nube, AWS
 
 * Computo, pagar por el tiempo que usamos la computación
@@ -65,4 +76,68 @@ Adquirir escala mundial en minutos
 
 ## Historia de AWS
 
-Benjamin Black y Chris Pinkham
+Benjamin Black y Chris Pinkham querian solucionar el problema de cuando alcanzaran el tráfico mas alto en la página
+
+* 2002: Internamente lanzado
+* 2003: La infraestructura de Amazon es una de sus principales fortalezas idea para comercializar
+* 2004: Se lanza al público SQS
+* 2006: Se relanza al público SQS, S3 y EC2
+* 2007: Se lanza en Europa
+* 2009: Se lanza RDS
+* 2010: Se lanza route 53
+* 2012: Se lanza DynamoDBThe future… no lo sabemos
+
+# AWS en números
+AWS tuvo $35.02 mil millones en ingresos anuales en 2019.
+AWS representó el 47% del mercado en 2019 (Microsoft es 2º con 22%)
+Mas de 1.000.000 de usuarios activos dentro de aws
+
+## Cómo escoger una región de AWS
+
+* **Cumplimiento** de los requisitos legales y de gobernanza de datos: los datos nunca abandonan una región sin su permiso explícito.
+* **Proximidad a los clientes**: latencia reducida.
+* **Servicios disponibles** dentro de una región: los nuevos servicios y las nuevas funciones no están disponibles en todas
+las regiones.
+* **Los precios** varían de región a región y son transparentes en la página de precios del servicio.
+
+## Una zona de disponibilidad es un data center
+* Un data center está lleno de servidores
+* Una zona de disponibilidad puede ser de varios data center.
+* Cada zona de disponibilidad es uno o mas centro de datos discretos con energía, redes y conectividad redundante, están separados entre sí y están conectados entre sí con un gran ancho de banda, redes de latencia ultrabaja
+
+## Infraestructura
+* AWS Regiones
+* AWS Zonas de disponibilidad
+* AWS Centro de datos
+* Ubicaciones de AWS Edge / puntos de presencia
+
+## Infraestructura Global (Servicios)
+* IAM
+* Route 53
+* Cloudfront
+* WAF
+
+## Servicios Regionales
+* EC2
+* Beanstalk
+* Lambda
+* Rekognition
+
+Diagrama del modelo de responsabilidad compartida
+* AWS:
+ * hardware y la infraestructura global
+    * Regiones (regions)
+    * Zonas de disponibilidad (availability zones)
+    * Ubicaciones de AWS Edge / puntos de presencia (Edge locations)
+  * software:
+    * computo (compute)
+    * almacenamiento (storage)
+    * bases de datos (database)
+    * redes (networking)
+* Cliente:
+ * Actualizaciones de S.O.
+ * Proteger los datos que se almacenan
+ * Aplicaciones
+ * Accesos
+ * Administración de usuarios y grupos
+
