@@ -129,15 +129,53 @@ Diagrama del modelo de responsabilidad compartida
     * Regiones (regions)
     * Zonas de disponibilidad (availability zones)
     * Ubicaciones de AWS Edge / puntos de presencia (Edge locations)
-  * software:
+  * Software:
     * computo (compute)
     * almacenamiento (storage)
     * bases de datos (database)
     * redes (networking)
 * Cliente:
- * Actualizaciones de S.O.
- * Proteger los datos que se almacenan
- * Aplicaciones
- * Accesos
- * Administración de usuarios y grupos
+  * Actualizaciones de S.O.
+  * Proteger los datos que se almacenan
+  * Aplicaciones
+  * Accesos
+  * Administración de usuarios y grupos
 
+## Protección de datos
+* Amazon Macie: para descubrir y proteger sus datos sensibles
+* AWS Key Management Service: almacena y administra claves de cifrado
+* AWS CloudHSM: almacenamiento de claves basado en hardware y el cumplimiento normativo
+* AWS Certificate Manager, provisiona, administra e implementa certificados de seguridad TSL y TLS
+* AWS Secrets Manager: rotar, gestionar y recuperar secretos como contraseña
+
+## Protección de la infraestructura
+* AWS Shield, para la protección de denegación de servicio
+* AWS Web Aplication Firewall, (WAF) filtra el tráfico de sitios web maliciosos
+* AWS Firewall Manager, administra las reglas del firewall de forma centralizada
+
+## Deteccion de amenazas
+* Amazon GuarDuty, detecta amenazas automáticamente
+* Amazon Inspector, ayuda a analizar la seguridad de la aplicación
+* Amazon config, registra y evalúa configuraciones de nuestros recursos
+* Amazon CloudTrail, rastrea la actividad del usuario y el uso de las API
+
+## Gestion de identidades
+* AWS Identity and Access Management, (IAM) administra de forma segura el acceso a una cuenta, servicios y recursos
+* AWS Inicio de sesión único: Implemente el acceso de sesión único (single sign on)
+* AWS administra la identidad dentro de las aplicaciones, se puede hacer el inicio de sesiones moviles
+* AWS Servicio de Directorio, implementa y administra un Active Directory Service
+* AWS Organizaciones, para gobernar y administrar de forma centralizada en un mismo lugar
+
+## IAM
+AWS Identity and Access Management (IAM) proporciona un control de acceso detallado en todo AWS.
+* Nos ayuda a administrar quién puede acceder a qué en los servicios y recursos de tu cuenta en AWS
+* Puedes crear usuarios y grupos
+* Establecer permisos permitir o denegar el acceso a los recursos de AWS mediante el uso de políticas
+* IAM es gratuito y esta disponible en todo aws
+
+## Usuarios IAM
+
+1. Root User: Principal, acceso a todo aws, y crea usuarios IAM
+2. Se crean otros roles, por ejemplo, developers, sales, tester. Se pueden crear **politicas**, creando grupos de acceso.
+
+## IAM Roles
