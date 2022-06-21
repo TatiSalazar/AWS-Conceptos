@@ -113,6 +113,18 @@ Brinda un sistema de archivos elástico, sencillo, sin servidor y práctico basa
     * Standar y Standar IA (para acceso poco frecuente). Puedes implementar políticas para que tus archivos se muevan de Standar IA después de cierto tiempo
     * Los datos están **encriptados de manera automática**
 
-##NFS
-Es un protocolo de archivos en red que permite acceder a archivos y directorios que no están en tu sistema. Esto permite que miles de máquinas puedan conectarse a EFS y procesar los datos que allí se encuentran.
+## NFS
+* Es un protocolo de archivos en red que permite acceder a archivos y directorios que no están en tu sistema. Esto permite que miles de máquinas puedan conectarse a EFS y procesar los datos que allí se encuentran.
 
+## AWS Storage Gateway
+Nos brinda acceso a almacenamiento en la nube prácticamente ilimitado desde nuestra propia infraestructura
+
+Se compone de 3 puertas de acceso : 
+    * **File Gateway** 
+    * Provee interfaces SMB y NFS para amazon S3, tanto en Windows como en linux. Los cuales escriben archivos al sistema y File Gateway se encarga de guardarlos en S3. Los archivos S3 pueden ser usados por cualquier servicio AWS.
+    * **Tape Gateway**
+    * Permite migrar copias de seguridad a una bilbioteca de cintas virtuales en AWS. Se guardan en S3 y se puede implementar S3 Glacier y S3 Glacier Deep Archive para guardar tus copias de seguridad a largo plazo.
+    * **Volume Gateway**
+    * Otorga almacenamiento en bloque con protocolo iSCSI, respaldado en la nube. Almacena datos en S3 de acuerdo 2 modos:
+    * *Modo caché* los datos principales se almacenan en S3, y, los datos de acceso frecuente se guardan localmente y en caché
+    * *Modo almacenado* todos los datos se guardan localmente, mientras se hacen una copia de seguridad de manera asincrona en S3
