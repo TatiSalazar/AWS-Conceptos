@@ -117,9 +117,8 @@ Brinda un sistema de archivos elástico, sencillo, sin servidor y práctico basa
 * Es un protocolo de archivos en red que permite acceder a archivos y directorios que no están en tu sistema. Esto permite que miles de máquinas puedan conectarse a EFS y procesar los datos que allí se encuentran.
 
 ## AWS Storage Gateway
-Nos brinda acceso a almacenamiento en la nube prácticamente ilimitado desde nuestra propia infraestructura
-
-Se compone de 3 puertas de acceso : 
+* Nos brinda acceso a almacenamiento en la nube prácticamente ilimitado desde nuestra propia infraestructura
+* Se compone de 3 puertas de acceso : 
     * **File Gateway** 
     * Provee interfaces SMB y NFS para amazon S3, tanto en Windows como en linux. Los cuales escriben archivos al sistema y File Gateway se encarga de guardarlos en S3. Los archivos S3 pueden ser usados por cualquier servicio AWS.
     * **Tape Gateway**
