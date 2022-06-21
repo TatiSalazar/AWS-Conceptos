@@ -103,3 +103,16 @@ Es un servicio de almacenamiento de objetos, líder en la industria. Otorga una 
 * **S3 Intelligent-Tiering** un tipo de almacenamiento que intenta ahorrar costos moviendo archivos entre los distintos tipos de almacenamiento S3, basado en los patrones de uso de los archivos.
   
 * **S3 Standard** si necesitamos un almacenamiento altamente disponible y duradero, usamos **S3 Glacier**  si necesitamos a largo plazo y de acceso infrecuente
+
+## Amazon Elastic System (EFS) 
+Brinda un sistema de archivos elástico, sencillo, sin servidor y práctico basado en NFS para las máquinas virtuales de EC2
+* Altamente disponible y duradero
+* Provee protección contra una interrupción de la zona de disponibilidad, replicando los archivos en múltiples zonas dentro de una región 
+
+* brinda dos clases de almacenamiento
+    * Standar y Standar IA (para acceso poco frecuente). Puedes implementar políticas para que tus archivos se muevan de Standar IA después de cierto tiempo
+    * Los datos están **encriptados de manera automática**
+
+##NFS
+Es un protocolo de archivos en red que permite acceder a archivos y directorios que no están en tu sistema. Esto permite que miles de máquinas puedan conectarse a EFS y procesar los datos que allí se encuentran.
+
