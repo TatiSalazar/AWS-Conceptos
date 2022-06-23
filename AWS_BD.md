@@ -143,8 +143,33 @@ Brinda un sistema de archivos elástico, sencillo, sin servidor y práctico basa
 * **Amazon ElastiCache** es un servicio de almacenamiento de caché en memoria 
 * En casos de uso flexibles y en tiempo real
 * Para memcached y redis
+* Acelera el rendimiento de las aplicaciones: accede a los datos con latencia de microsegundos y un alto rendimiento para que las aplicaciones funcionen rápido
+* Reduce la carga de la bd del backend
+* Cree almacenes de datos de baja latencia
+* Caso de uso: Sitio de noticias: Acelera la velocidad con la que se encuentran los articulos en la bd, en lugar de acceder a la bd cada vez que llegue un visitante, los articulos ya estan listos para ser enviados por la memoria caché
+* Empresas que lo usan: Peloton, AirBNB, Duolingo
 
 ## Bases de datos basadas en documentos
 * **Amazon DocumentDB** es un servicio de base de datos de larga duración
 * Alta disponibilidad, rápida, escalable y completamente administrado para operar cargas de trabajo de MongoDB
+
+## Amazon RDS
+* permite crear, ejecutar bases de datos relacionales en la nube
+* se consulta a traves de sql
+* MYSQL, MariaDB, PostgreSQL, Oracle, SQL Server y Amazon Aurora
+* Administrado por PAAS
+* Altamente escalable, multiples zonas de disponibiliad
+* Permite crear réplicas de bases de datos de solo lectura
+* Realiza copias de seguridad automática y es tolerante a fallos
+* Solo pagas por lo que usas
+
+## DynamoDB
+* Es una base de datos NOSQL de documentos de clave-valor
+* Rendimiento en milisegundo de un solo dígito
+* Manejo de datos actualizados en tiempo real
+* Administrado por PAAS
+* Seguridad, respaldo y restauración integrados
+* Adminite picos de 20,000,000 de solicitudes por segundo
+* Rentable
+* Casos de uso: Publicidad, juegos, ecommerce, bancos, redes sociales, media entertainment, propio internet
 
