@@ -127,3 +127,24 @@ Brinda un sistema de archivos elástico, sencillo, sin servidor y práctico basa
     * Otorga almacenamiento en bloque con protocolo iSCSI, respaldado en la nube. Almacena datos en S3 de acuerdo 2 modos:
     * *Modo caché* los datos principales se almacenan en S3, y, los datos de acceso frecuente se guardan localmente y en caché
     * *Modo almacenado* todos los datos se guardan localmente, mientras se hacen una copia de seguridad de manera asincrona en S3
+
+**Versionamiento S3**
+* Cada vez que subimos un archivo con el mismo nombre a un bucket con versionamiento habilitado, se crea una nueva version del mismo, y se le asigna un ID único de objeto. Las versiones anteriores de los archivos también se almacenan, lo que puede suponer un mayor costo.
+
+## Bases de datos relacionales
+  * **Amazon Aurora** compatible con MYSQL y PostgresSQL creada para la nube
+  * **Amazon Redshift** ideal para analítica. Usa SQL para analizar datos estructurados en almacenamientos de datos, con hardware y machine learning diseñados por aws. 
+
+## Bases de datos clave-valor
+  * **Amazon DynamoDB** es una base de datos de documentos y valores clave que ofrece un rendimiento de milisegundos de un solo digito a cualquier escala.
+  * Para aplicaciones de web de alto tráfico, sistema de comercio electrónico y aplicaciones de juego
+
+## Bases de datos en memoria
+* **Amazon ElastiCache** es un servicio de almacenamiento de caché en memoria 
+* En casos de uso flexibles y en tiempo real
+* Para memcached y redis
+
+## Bases de datos basadas en documentos
+* **Amazon DocumentDB** es un servicio de base de datos de larga duración
+* Alta disponibilidad, rápida, escalable y completamente administrado para operar cargas de trabajo de MongoDB
+
