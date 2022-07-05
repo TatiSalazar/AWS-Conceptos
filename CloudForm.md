@@ -26,7 +26,7 @@ AWS CloudFormation es :
 * Son utilizadas para crear recursos de aws
 * Ejemplo:
 
-``.json
+```json
 {
   "AWSTemplateFormatVersion" : "2010-09-09",
   "Description" : "A sample template",
@@ -52,4 +52,93 @@ AWS CloudFormation es :
     }
   }
 }
-``
+```
+## Anatomia de una plantilla
+* Describe una estructura del aws
+* JSON estructura:
+
+```json
+{
+  "AWSTemplateFormatVersion" : "version date",
+
+  "Description" : "JSON string",
+
+  "Metadata" : {
+    template metadata
+  },
+
+  "Parameters" : {
+    set of parameters
+  },
+  
+  "Rules" : {
+    set of rules
+  },
+
+  "Mappings" : {
+    set of mappings
+  },
+
+  "Conditions" : {
+    set of conditions
+  },
+
+  "Transform" : {
+    set of transforms
+  },
+
+  "Resources" : {
+    set of resources
+  },
+  
+  "Outputs" : {
+    set of outputs
+  }
+}
+```
+* YAML
+```json
+---
+AWSTemplateFormatVersion: "version date"
+
+Description:
+  String
+
+Metadata:
+  template metadata
+
+Parameters:
+  set of parameters
+
+Rules:
+  set of rules
+
+Mappings:
+  set of mappings
+
+Conditions:
+  set of conditions
+
+Transform:
+  set of transforms
+
+Resources:
+  set of resources
+
+Outputs:
+  set of outputs
+
+```
+
+## Secciones de plantillas
+* **Resource** : (Unica) Obligatoria.   
+* **Version Formato** : (Opcional). Es diferente para API y WSDL
+* **Descripcion** : (Opcional). Una cadena de texto que describe la plantilla.
+* **Metadatos** : Objetos que dan informacion adicional sobre la plantilla.
+* **Parámetros** : (Opcional) Valores que se van a pasar a la plantilla en tiempo de ejecucion (crear/actualizar pila)
+* **Reglas** : (Opcional) Valida parametros durante la creacion o actualizacion de una pila.
+* **Mapeos** : (Opcional) Un mapeo de claves y los valores asociados se pueden utilizar para especificar valors de condicionales "Similar a una tabla de busqueda"
+* **Condiciones** : (Opcional) Condiciones que controlan si determinados recursos se crean o si a determinadas propiedades de recursos se les asigna un valor durante la creación de la pila o la actualización.
+* **Transformación** : (Opcional) Para aplicaciones sin servidor (Lambda), especifica la versión de AWS SAM que hay que utilizar. Cuando especifique una transformación, puede utilizar sintaxis AWS SAM para declarar los recursos en la plantilla. El modelo define la sintaxis que puede utilizar y la forma en la que se procesa.
+* **Recursos** : (Obligatorio) Especifica los recursos de la pila y sus propiedades.
+* **Salidas** : (Opcional) Describe los valores que se devuelven siempre que ve las propiedades de su pila.
