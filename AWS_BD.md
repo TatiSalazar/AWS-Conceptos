@@ -45,6 +45,10 @@ El propósito de un contenedor es **crear un paquete de tu programa y todas sus 
 
 Un problema común del desarrollo de software es utilizar distintas versiones de diferentes librerías/lenguajes de programación/programas. **Docker nos permite crear contenedores para resolver este problema.**
 
+**Los alojamientos (host dedicados) dedicados de Amazon EC2** le permiten utilizar licencias de software elegibles de proveedores como Microsoft y Oracle en Amazon EC2 para obtener la flexibilidad y rentabilidad de utilizar sus propias licencias, pero con la resiliencia, simplicidad y elasticidad de AWS. Un alojamiento dedicado de Amazon EC2 es un servidor físico dedicado completamente para su uso personal, por tanto usted puede ayudar a abordar los requisitos de conformidad corporativos.
+
+El alojamiento dedicado de Amazon EC2 también está integrado con AWS License Manager, un servicio que le ayuda a administrar sus licencias de software, incluidas las licencias de Microsoft Windows Server y Microsoft SQL Server. Con License Manager puede definir los términos de sus licencias para controlar el uso de las licencias, como también definir sus preferencias de administración de alojamientos dedicados para la asignación de alojamientos y uso de capacidad de alojamiento. Luego de configurarlo, AWS realiza estas tareas administrativas por usted para que pueda lanzar máquinas virtuales (instancias) de manera continua en alojamientos dedicados de la misma manera en que lanzaría una instancia EC2 con licencias proporcionadas por AWS.
+
 ## Amazon ECS (Elastic Container Service)
 Amazon ECS es un servicio de contenedores, donde puedes implementar tus imágenes en contenedores en AWS. Cuando corras tus contenedores en AWS, no notarás diferencia entre tu máquina local y el entorno de AWS.
 
