@@ -215,3 +215,19 @@ Curso de Introducción a AWS: Redes, Gobernanza y Machine Learning cap 13-14 vid
 * **Amazon Polly** ayuda a convertir el texto en un habla realista
 * **Amazon Transcribe** permite agregar traducciones de voz a texto de calidad
 * **Amazon Lex** permite generar agentes conversacionales o bots de chat
+
+## AWS Rekognition
+*  Es un servicio que nos permite analizar imágenes y videos mediante aprendizaje automático
+*  Le pasamos una imagen al servicio, y nos devuelve una lista de elementos que puede contener esa imagen, junto con un porcentaje de confianza para cada elemento.
+
+## Amazon Polly
+* permite generar discursos realistas a partir de texto
+* Podemos escoger un motor neural o estándar.
+*  El motor neural produce el habla más similar a la humana posible, 
+*  mientras que el estándar solo provee voz con un sonido natural, pero nos da más opciones de voces.
+*  podemos guardar el resultado en un bucket de S3
+
+## Amazon Transcribe
+* Crear transcripciones de voz a texto de calidad para un amplio abanico de casos de uso
+* Se elige el lenguaje
+
