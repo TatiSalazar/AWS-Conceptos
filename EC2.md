@@ -55,3 +55,21 @@ Para proyectos como paginas web o repositorios de código.
 * Bases de datos relaciones y NoSQL
 * Redis (Cache DB en memoria)
 * Almacenamiento de datos
+
+## Grupos de seguridad
+
+* Trafico entrante ->
+*                       Security group
+* Trafico saliente <-
+* Fundamentales para la seguridad.
+* Reglas de permisos para trafico entrante/saliente (firewall)
+* Es un componente que se adjunta a las intancias EC2.
+* Puedes referenciar grupos de seguridad entre si.
+
+* Puertos clasicos
+* 21 ftp
+* 22 ssh
+* 22 sftp
+* 80 http
+* 443 https
+* 3389 RDP
