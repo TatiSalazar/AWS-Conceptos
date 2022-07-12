@@ -97,11 +97,79 @@ Entonces que es un CDN? es una Red de Distribución de Contenido, por sus siglas
 * **Systems Manager** optimiza el rendimiento y la seguridad mientras administramos una gran cantidad de sistemas
 * **Amazon X-Ray** analiza y depura aplicaciones en produccion
 
-## CloudFormation
+## CloudFormation (infraestructura como código)
 * Es un servicio que permite provisionar servicios como máquinas virtuales o VPCs mediante código. 
 * Para esto se usan las CloudFormation Templates, que son plantillas en donde especificamos los recursos que queremos desplegar. 
 * Estas plantillas pueden estar en formato JSON o YAML, y en ellas se define un stack o pila de recursos a provisionar.
 * A esta estructura se le llama pila
+
+```json
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "this template does XXXX",
+  "Metadata": {},
+  "Parameters": {},
+  "Mappings": {},
+  "Conditions": {},
+  "Transform": {},
+  "Resources": {},
+  "Outputs": {}
+```
+
+* **AWSTemplateFormatVersion**: este parámetro es opcional. Aquí especificamos la versión de la plantilla
+* **Description**: cadena de texto que describe la plantilla. Debe ir después de AWSTemplateFormatVersion
+* **Metadata**: objetos que proporcionan información adicional sobre la plantilla
+* **Parameters**: valores que pasaremos a la plantilla al ejecutarse, ya sea durante la creación o actualización del *stack
+* **Mappings**: permite asignar un conjunto de valores a una clave específica. Por ejemplo, para establecer valores en función de una región, podemos crear un mapping que usa el nombre de una región como clave y contiene los valores que deseemos especificar para cada región
+* **Conditions**: controla que se creen recursos o se asignen valores a dichos recursos en función de una condición. Por ejemplo, podemos asignar valores distintos para entornos de producción o de prueba
+* **Transform**: especifica las macros que AWS CloudFormation usa para procesar la plantilla
+* **Resources**: aquí se declaran los recursos a incluir en el stack. Por ejemplo, instancias EC2 o buckets de S3.
+* **Outputs**: declara valores de salida que pueden ser usados en otros stacks
+
+* Pasos para crear el stack
+* 1. Nos dirigimos a la página de CloudFormation desde nuestra cuenta de AWS (en esta página podremos conocer más sobre el servicio en cuestión).
+* 2. Aquí le damos a “Crear stack”.
+* 3. Para crear el stack, en “Especificar plantilla” seleccionamos “Cargar un archivo de plantilla”, y cargamos el archivo createstack.json. Este archivo simplemente define un bucket de S3 llamado “platzilab”.
+* 4. Le damos clic a siguiente y, a continuación, escogemos un nombre para el stack o pila. En este caso, la llamamos cfnlab, y le damos a siguiente.
+* 5. Opcionalmente, podemos añadir etiquetas para identificar la pila, y un rol de IAM.
+* 6. Dejamos el resto de configuraciones por defecto y le damos a siguiente. Entonces nos llevará a revisar las configuraciones, y le damos a “Crear pila”.
+* 7. Podremos ver el proceso de creación de la pila, los eventos y los recursos que fueron creados. Si te fijas en el nombre del bucket creado, verás que este está compuesto por el nombre de la pila, el nombre que le asignamos al bucket en la plantilla, y una cadena de texto aleatoria. Esto es para evitar crear recursos con nombre duplicados.
+
+* Actualizar pila
+* 1. Para actualizar la pila primero usaremos el archivo updatestack1.json. El contenido de este archivo es el siguiente:
+```json
+{
+  "Resources": {
+    "platzilab": {
+      "Type": "AWS::S3::Bucket"
+    },
+    "platzilabalexis": {
+      "Type": "AWS::S3::Bucket"
+    }
+  }
+}
+```
+
+* 2. Ahora, en la página de CloudFormation, escogemos la pila que creamos y le damos a “Actualizar”.
+* 3. En “Preparar la plantilla” escogemos “Reemplazar la plantilla actual” y cargamos el archivo updatestack1.json.
+* 4. Le damos a Siguiente tres veces, y notamos que en “Vista previa del conjunto de cambios” nos muestra que solo va a añadir un nuevo bucket de S3, puesto que el bucket con ID lógico “platzilab” ya existe. Entonces le damos a “Actualizar pila”.
+* Crear pila: Podemos crear otra pila dándole un nombre explícito a los buckets que queremos provisionar. Para ello, usemos el archivo updatestack2.json.
+```json
+{
+  "Resources": {
+    "platzilab": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "BucketName": "mibucket123"
+      }
+    },
+    "platzilabalexis  ": {
+      "Type": "AWS::S3::Bucket"
+    }
+  }
+}
+```
+* En este caso el bucket con ID lógico “platzilab” tiene en sus propiedades el nombre de bucket “mibucket123”. Este nombre debe ser único en todo AWS. Si intentamos crear la pila con un bucket con nombre repetido, tendremos un error y no se creará la pila.
+Curso de Introducción a AWS: Redes, Gobernanza y Machine Learning cap 13-14 video
 
 ## Beneficios CLOUDFORMATION
 * **Control de versiones** este codigo se puede guardar en github, para tener un historial 
@@ -126,3 +194,24 @@ Entonces que es un CDN? es una Red de Distribución de Contenido, por sus siglas
 * En este grupo especificaremos un tamaño mínimo (el número mínimo de instancias a correr), y una capacidad deseada (el número óptimo de instancias en función de las necesidades).
 * **Load Balancer de AWS es lo que permite distribuir automaticamente las conexiones a medida que aparecen y desaparecen estos servidores.**
 * **EC2 no es el único servicio que tiene auto escalamiento. DynamoDB y Aurora también implementan este concepto.**
+
+## Machine learning
+* Es un tipo de inteligencia artificial donde podemos escribir programas que aprenden de los datos que se le proporcionan
+* Casos de uso: Automoviles automaticos, relojes inteligentes, agricultura, perfil financiero, correos electronicos
+
+**Servicios de inteligencia artificial en AWS**
+* **Amazon Kendra** ofrece un sistema de búsqueda inteligente a nuestros clientes
+* **Amazon Personalize** brinda recomendaciones personalizadas a nuestros clientes
+
+**Servicios de analisis de métricas comerciales**
+* **Amazon Lookout for metrics** detecta automáticamente cambios inesperados en aspectos como el rendimiento de los ingresos y la retención de los clientes, ayudándonos a identificar la causas
+* **Amazon Forecast** nos ayuda a crear modelos de pronósticos precisos
+* **Amazon Fraud Detector** identifica actividades en línea potencialmente fraudulentas
+
+**Servicios de visión artificial**
+* Amazon Rekognition permite analizar imágenes, videos y extraer el significado de estos. 
+
+**Servicios de idiomas**
+* **Amazon Polly** ayuda a convertir el texto en un habla realista
+* **Amazon Transcribe** permite agregar traducciones de voz a texto de calidad
+* **Amazon Lex** permite generar agentes conversacionales o bots de chat
