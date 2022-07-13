@@ -92,13 +92,13 @@ Para proyectos como paginas web o repositorios de código.
   LAB video 10 -11- 12 -13-14-15
   
   ## Precios
-* Instancias bajo demanda:
+* **Instancias bajo demanda:**
 * Pago por uso (facturación por segundos)
 * Costos más altos.
 * Flexibilidad para apagar en cualquier momento.
 * Recomendado para cargar interrumpidas, no se sabe como se comportara.
 
-* Instancias reservadas
+* **Instancias reservadas**
 * Se puede reservar entre 1 a 3 años.
 * Descuentos de hasta 72%
 * Recomandadas para uso estable como DB.
@@ -108,14 +108,14 @@ Para proyectos como paginas web o repositorios de código.
 * Programadas:
 * Lanzamiento programado (ejm: black friday)
 
-* Instancias Spot
+* **Instancias Spot**
 * no recomendable para ambientes de producción
 
-* Host Dedicados
+* **Host Dedicados**
 * Servidor fisico, capacidad de instancia s2.
 * Se puede traer sus propias licencias, instalarlo en el host.
 * se puede reservar hasta 3 años.
 
-* Instancias dedicadas:
+* **Instancias dedicadas:**
 * Se ejecutaran en HW dedicado
 * Se puede compartir el HW para compartirlo con otras instancias dentro de la cuenta
