@@ -119,3 +119,21 @@ Para proyectos como paginas web o repositorios de código.
 * **Instancias dedicadas:**
 * Se ejecutaran en HW dedicado
 * Se puede compartir el HW para compartirlo con otras instancias dentro de la cuenta
+
+## Modelo de responsabilidad compartida EC2
+* Infraestructura (seguridad de red global)
+* Aislamiento en hosts fisicos
+* Validacion de cumplimiento
+* Reemplazo de hardware defectutuoso
+* Reglas de grupos de seguridad
+* Parches y actualizaciones del sistema operativo
+* Software y utilidades instalados en la instancia EC2
+* Funciones de IAM asignadas a la administracion de acceso de usuarios de EC2 e IAM
+
+**Resumen**
+* Instancias
+* Grupos de seguridad
+* User data
+* SSH
+* Role Instance
+* Opciones de compra
