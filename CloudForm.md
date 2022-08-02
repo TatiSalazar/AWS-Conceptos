@@ -189,4 +189,88 @@ Si tenemos un error en la infraestructura, siempre es mejor desplegar de nuevo l
 * Transaccional: espera a que todos los recursos estén creados para desplegar la aplicación, sino hará un rollback.
 * Empresa que usan Cloud Formation: Barcelona FC, Expedia, Coinbase, nextdoor.
 
-video 5 lab
+# Template
+* Especificar version
+• AWSTemplateFormatVersion: “versión date”: Define las capacidades de la plantilla
+
+* Opcional
+• Description: String. Texto que describe la plantilla, es opcional.
+
+* Opcional
+• Metadata: Información adicional del template. Se pueden crear tres subregistros:
+  AWS::CloudFormation::Init
+  AWS::CloudFormation::Interface
+  AWS::CloudFormation::Designer
+  
+* OPCIONAL/IMPORTANTE, son los valores que se le pasan a la plantilla cuando se crea o actualiza un stack. SON RECURSOS DENTRO DE AWS.
+• Parameters: Valores que se le pasan al template cuando se crea o actualiza un Stack. Pueden ser referenciados desde Resources u Outputs.
+
+
+´´´json
+Parameters:
+	myKeryPair:
+		Description: Amazon EC2 Key Pair
+		Type: “AWS::EC2::KeyPair::KeyName”
+	mySubnetIDs:
+		Description: Subnet IDs
+		Type: “List<AWS::EC2::Subnet::Id>”
+	DbSubnetIpBlocks:
+		Description: “Comma-delimited list of three CIDR blocks”
+		Type: CommaDelimitedList
+		Default: “10.0.48.0/24, 10.0.112.0/24, 10.0.176.0/24”
+	DBPort:
+		Default: 3306
+		Description: TCP/IP port for the database
+		Type: Number
+		MinValue: 1150
+		MaxValue: 65535
+	DBPwd:
+		NoEcho: true
+		Description: The database admin account password
+		Type: String
+		MinLength: 1
+		MaxLength: 41
+		AllowedPattern: ^[a-zA-z0-9]*$
+´´´
+* OPCIONA/ LLAVE VALOR QUE SE REFERENCIA DENTRO DEL TEMPLATE
+• Mappings: Arreglos de llave valor asociados que se usan para agregar parámetros condicionales. Similar a una tabla de búsqueda. Utiliza la función Fn::FindInMap, Ej:
+
+´´´json
+Mappings:
+	RegionMap:
+		us-east-1:
+			“HVM64”: “ami-0ff8a91507f77f867”
+		us-west-1:
+			“HVM64”: “ami-0bdb828fd58c52235”
+´´´
+* OPCIONAL/ si creamos o no un recurso / o si le asignamos una variable a un recurso
+• Conditions: controlan si se crean ciertos recursos o si se asigna un valor a ciertas propiedades durante la creacion del stack.
+
+* OPCIONAL
+• Transforms: para aplicaciones serverless, si se especifica se pueden usar sintaxis de AWS SAM.
+
+* OBLIGATORIO/
+• Resources: especifica los recursos y las propiedades a crear, porque siempre vamos a desplegar un recurso. Campo obligatorio.
+
+*OPCIONAL/**Si tus recursos quieres interconectar, los Outputs debes manejar.**
+• Outputs: valores devueltos de las propiedades del recurso creado (DEL STACK), la funcion lambda toma el export de dynamo. ARN = Amazon Resource Name.
+
+## ¿Que es un stack?
+Coleccion de recursos que se manejan como unidad
+
+## Gestion de recursos
+CloudFormation asegura que todos los recursos sean creados o eliminados
+
+## ¿Que pasa si un recurso falla en crearse?
+Se hace rollback a todos los recursos del stack
+
+## ¿Que pasa si borro un stack?
+Todos los recursos asociados se borran
+
+## ¿Que es un Drift?
+Detecta una desviación entre el stack y los recursos desplegados
+
+## ¿Que puedo identificar con un Drift?
+Recursos agregados, eliminados y con propiedades diferentes
+
+video 5,7,8 lab
