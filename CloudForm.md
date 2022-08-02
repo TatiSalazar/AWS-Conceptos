@@ -142,3 +142,51 @@ Outputs:
 * **Transformación** : (Opcional) Para aplicaciones sin servidor (Lambda), especifica la versión de AWS SAM que hay que utilizar. Cuando especifique una transformación, puede utilizar sintaxis AWS SAM para declarar los recursos en la plantilla. El modelo define la sintaxis que puede utilizar y la forma en la que se procesa.
 * **Recursos** : (Obligatorio) Especifica los recursos de la pila y sus propiedades.
 * **Salidas** : (Opcional) Describe los valores que se devuelven siempre que ve las propiedades de su pila.
+
+
+# CLOUDFORM
+
+Lambda code -> Github -> Source -> Compilar -> Desplegar -> Lambda 
+
+## Herramientas
+* **Terraform** : despliegues multi cloud, posee una version open source y otra enterprise
+* **Pulumi** : despligues multi cloud, podes sacar ventajas tus conocimientos en un lenguaje
+* **Serverless Framework** : para el despliegue de Lambdas, dynamoDb, api gateway, s3, kinesis
+* **SDK** : provista diferentes lenguajes, para python se llama boto3
+* **CDK** : (Cloud Development Kit): diferencia con el sdk, es que no va usar librerias particulares, sino que dentro del mismo codigo python vamos a llamar a los recursos y crealos. Por detras cdk va a generar un template de CFN.
+* **AWS SAM** : (Serverless Aplication Model): para el despliegue de Lambdas, dynamoDb, api gateway, kinesis. Cambia la definición del recurso, para desplegar una lambda en CFN se declara como “AWS::Lambda::Function” y en SAM “AWS::Serverless::Function”
+## Versionamiento
+Trazabilidad sobre el codigo, quien lo modifico, quien lo acepto
+## Eficiencia
+Desplegarlos en diferentese ambientes ( mejor tiempo)
+Dev
+Stg
+Prd
+## Re-Utilizable
+Reutilizar infraestructura que hemos utilizado para otros proyectos
+## Infraestructura Inmutable
+No se puede cambiar
+Si tenemos un error en la infraestructura, siempre es mejor desplegar de nuevo la infraestructura
+
+# Ventajas y Beneficios
+
+**Code -> Check -> Create -> Deploy**
+
+* Template  -> JSON, YML
+* Servicios -> Stacks, Stack Set y Designer
+
+* Flujo de despliegue : código, se verifica y hay una fase de despliegue. Se pueden crear templates en formato YAML o JSON.
+* Servicios : Stacks, stack sets, integración full con todos los componentes de AWS.
+* Beneficios :  AWS brinda soporte sobre tu código de cloudformation en caso de que no despliegue tu integración, es decir brinda soporte sobre tu código si tienes el plan bussiness contratado.
+* Integración nativa con todos los servicios de AWS.
+* Designer: te permite crear infraestructura de forma visual y si ya lo tienes creado, cargas tu plantilla y veras como luce.
+* Multicuenta: desplegar en 3 cuentas diferentes la misma infraestructura.
+* Flexibilidad: creación de recursos dinámicamente con custom resources.
+* Cloudformation: gratis, se te cobra por los recursos que este despliegue.
+* Escalabilidad: puede crecer desde el recurso mas simple hasta una arquitectura más compleja.
+* Seguridad: todos los despliegues están completamente asegurados, cifrado de llaves, etc.
+* Estabilidad: al ser administrado por AWS tiene un alto nivel de SLA.
+* Transaccional: espera a que todos los recursos estén creados para desplegar la aplicación, sino hará un rollback.
+* Empresa que usan Cloud Formation: Barcelona FC, Expedia, Coinbase, nextdoor.
+
+video 5 lab
