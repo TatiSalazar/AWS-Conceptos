@@ -308,4 +308,4 @@ Los stacks se comunican entre si a través de outputs
 
 
 
-video 5,7,8,11,13, lab
+video 5,7,8,11,13,16,17  lab
