@@ -273,4 +273,39 @@ Detecta una desviación entre el stack y los recursos desplegados
 ## ¿Que puedo identificar con un Drift?
 Recursos agregados, eliminados y con propiedades diferentes
 
-video 5,7,8 lab
+## Stack set
+
+## ¿Qué tipos de cuentas existen?
+Cuentas administrador y cuentas target
+
+## ¿Desde dónde se despliegan recursos Multi Cuenta?
+Se debe hacer desde una cuenta maestra que tenga permisos sobre las otras
+
+## Instancias de un Stack
+Hace referencia a un stack dentro de una cuenta
+
+## Diferentes Parámetros
+Se pueden desplegar stack set que cambien de parámetros dependiendo de la cuenta destino.
+
+## NESTED STACKS
+Surgen a causa de los limites de cloudformation
+* 100 Mappings -> Stack
+* 200 Recursos -> Stack
+* 51,200 bytes -> Cuerpo de template para createStack, updateSatck, validateTemplate
+* 460,800 bytes -> Tamaño máximo de template en S3
+
+## Limites
+Para crear recursos que necesiten pasar los limites de Cloudformation
+
+## Granularidad
+Cada recurso queda con un stack independiente
+
+## Orden
+Se pueden crear precedencias y condiciones entre recursos
+
+## Intereaccion
+Los stacks se comunican entre si a través de outputs
+
+
+
+video 5,7,8,11,13, lab
