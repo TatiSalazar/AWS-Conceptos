@@ -306,6 +306,18 @@ Se pueden crear precedencias y condiciones entre recursos
 ## Intereaccion
 Los stacks se comunican entre si a través de outputs
 
+## -------------------------------------------------------------------------
+
+## GetAtt
+Devuelve el valor de un atributo de un recurso en el template
+Cuando se quiere tomar algun atributo de un recurso dentro del mismo stack
+
+Role: !GetAtt LambdaRole.Arn
+
+## Composicion
+Se compone del nombre del recurso y del atributo
+
+## 
 
 
 video 5,7,8,11,13,16,17  lab
