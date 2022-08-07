@@ -313,11 +313,27 @@ Devuelve el valor de un atributo de un recurso en el template
 Cuando se quiere tomar algun atributo de un recurso dentro del mismo stack
 
 Role: !GetAtt LambdaRole.Arn
+LambdaRole -> Nombre logico del recurso
+Arn -> atributo
 
 ## Composicion
 Se compone del nombre del recurso y del atributo
 
-## 
+## FindInMap
+
+## Funcionalidad
+Devuelve el valor correspondiente al map declarado en la seccion mappings
+
+## Composicion
+MapName, TopLevelKey y SecondLevelKey
+
+´´´json
+ImageId: !FindInMap
+	- RegionMap
+	- !Ref 'AWS::Region'
+	- HVM64
+´´´
+
 
 
 video 5,7,8,11,13,16,17  lab
