@@ -327,13 +327,83 @@ Devuelve el valor correspondiente al map declarado en la seccion mappings
 ## Composicion
 MapName, TopLevelKey y SecondLevelKey
 
-´´´json
+```json
 ImageId: !FindInMap
-	- RegionMap
-	- !Ref 'AWS::Region'
-	- HVM64
-´´´
+	- RegionMap  //MapName
+	- !Ref 'AWS::Region' //TopLevelKey
+	- HVM64  //SecondLevelKey
+```
 
+## Join
+* Funcionalidad: Une un listado de valores en uno solo
+* Composicion: Se compone de un listado de valores y un delimitador
+* Sintaxis V1
+```json
+{ "Fn::Join" : [ "delimiter", [ list of values] ] }
+```
+* Sintaxis V2
+```json
+Fn::Join: [ delimiter, [ list of values] ] 
+```
+* Sintaxis V3
+```json
+!Join [ delimiter, [ list of values] ] 
+```
+## Split y Select
+* SPLIT
+* Dividir una cadena en una lista de valores
+* SELECT
+* Selecciona un valor de una lista de valores
+```json
+{ "Fn::Split" : [ "delimiter", "source string" ] }
+```
+```json
+Fn::Split: [ delimiter, source string ] 
+```
+```json
+!Split [ delimiter, source string ]  
+```
 
+* Sintaxis para SELECT
+```json
+{ "Fn::Select" : [ index, listOfObjects ] }
+```
+```json
+Fn::Select: [ index, listOfObjects ] 
+```
+```json
+!Select [ index, listOfObjects ]  
+```
+# Sub
+* Funcionalidad: Sustituye una variable con un input que nosotros especifiquemos
+* Composicion: String VarName: ValueName
+
+```json
+{ "Fn::Sub" : [ String, {Var1Name: Var1Value, Var2Name: Var2Value} ] }
+```
+```json
+Fn::Sub:
+ -String
+ - {Var1Name: Var1Value, Var2Name: Var2Value}
+```
+```json
+!Sub
+ -String
+ - {Var1Name: Var1Value, Var2Name: Var2Value}
+```
+## ¿Cuando usar Sub?
+Cuando se requiera reemplazar un valor en un string, puede ser un pseudo parameter
+
+* **AWS::AccountId** Numero de la cuenta de AWS
+* **AWS::NotificationARNs** ARNs del stack actual
+* **AWS::NoValue** Remueve un valor de la propiedad
+* **AWS::Partition** Devuelve la particion de un recurso
+* **AWS::Region** Devuelve la region actual del stack
+* **AWS::StackName** Devuelve el nombre del stack
+* **AWS::StackId** Devuelve el ID del stack
+* **AWS::URLSuffix** Devuelve el sufijo de un dominio
+
+!Sub 'arn:aws:ec2 ${AWS::Region}:${AWS::AccountId}:vpc/${vpc}
+* ${AWS::Region} -> region actual del stack us-east-1
 
 video 5,7,8,11,13,16,17  lab
